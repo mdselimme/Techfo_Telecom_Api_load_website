@@ -1,9 +1,9 @@
-const findInputText = () => {
+const findInputText = (isShowAll) => {
     toggleLoadingSpinner(true);
     const inputBox = document.getElementById("search-box");
     const inputTex = inputBox.value;
-    findAllPhones(inputTex);
-    inputBox.value = "";   
+    findAllPhones(inputTex, isShowAll);
+    // inputBox.value = "";   
 };
 
 
@@ -14,4 +14,10 @@ const toggleLoadingSpinner = (isLoading) => {
     }else{
         loadingSpinner.classList.add("hidden");
     }
+}
+
+
+const handleShowAllData = () => {
+
+    findInputText(true);
 }
