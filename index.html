@@ -22,8 +22,12 @@
 
     <!-- main section start here  -->
      <main class="py-5">
-        <section class="container mx-auto">
-            <div id="card-section-main" class="grid grid-cols-3 gap-5">
+        <section class="container mx-auto overflow-hidden">
+            <div class="search-box bg-black text-center p-4 rounded-2xl mb-10">
+                <input type="text" id="search-box" placeholder="Search here your desire company" class="input input-bordered w-full max-w-xs" />
+                <button onclick="findInputText()" class="btn btn-warning">Search</button>
+            </div>
+            <div id="card-section-main" class="grid grid-cols-3 gap-10">
                 
             </div>
         </section>
@@ -36,6 +40,8 @@
      </footer>
     <!-- footer section end here  -->
 
+    <!-- Javascript file link here  -->
+    <script src="./js/search.js"></script>
     <script src="./js/hunting_phone.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 
-const findAllPhones = async () =>{
-    const phones = await fetch("https://openapi.programming-hero.com/api/phones?search=iphone");
+const findAllPhones = async (inputValue) =>{
+    const phones = await fetch(`https://openapi.programming-hero.com/api/phones?search=${inputValue}`);
     const phonesData = await phones.json();
     displayPhones(phonesData.data);
 };
@@ -9,9 +9,8 @@ const findAllPhones = async () =>{
 const displayPhones = (phones) =>{
     const mainSection = document.getElementById("card-section-main");
     phones.forEach((data)=>{
-        console.log(data);
         const div = document.createElement("div");
-        div.classList.add("card", "glass",  "w-96");
+        div.classList.add("card", "glass");
         div.innerHTML = `
             <figure>
                           <img class="full p-4"
@@ -22,13 +21,13 @@ const displayPhones = (phones) =>{
                           <h1 class="card-title">${data.brand}</h1>
                           <h2 class="card-title">${data.phone_name}</h2>
                           <p>${data.slug}</p>
-                          <div class="card-actions justify-start">
+                          <div class="card-actions justify-start mt-5">
                             <button class="btn btn-primary">Buy Now</button>
                           </div>
                         </div>
         `
         mainSection.appendChild(div);
-    })
+    });
 };
 
 findAllPhones();
