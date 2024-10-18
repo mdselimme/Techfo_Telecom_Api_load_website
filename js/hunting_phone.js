@@ -8,6 +8,8 @@ const findAllPhones = async (inputValue) =>{
 
 const displayPhones = (phones) =>{
     const mainSection = document.getElementById("card-section-main");
+    mainSection.textContent = "";
+    phones = phones.slice(0,9)
     phones.forEach((data)=>{
         const div = document.createElement("div");
         div.classList.add("card", "glass");
@@ -29,5 +31,7 @@ const displayPhones = (phones) =>{
         mainSection.appendChild(div);
     });
 };
+
+
 
 findAllPhones();
