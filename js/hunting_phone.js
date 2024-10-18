@@ -7,9 +7,20 @@ const findAllPhones = async (inputValue) =>{
 
 
 const displayPhones = (phones) =>{
+  toggleLoadingSpinner(true);
+
     const mainSection = document.getElementById("card-section-main");
     mainSection.textContent = "";
+
+    const showAllBtn = document.getElementById("show-all-btn");
+    if(phones.length > 9){
+      showAllBtn.classList.remove("hidden");
+    }else{
+      showAllBtn.classList.add("hidden");
+    }
+
     phones = phones.slice(0,9)
+    
     phones.forEach((data)=>{
         const div = document.createElement("div");
         div.classList.add("card", "glass");
@@ -30,6 +41,7 @@ const displayPhones = (phones) =>{
         `
         mainSection.appendChild(div);
     });
+    toggleLoadingSpinner(false);
 };
 
 

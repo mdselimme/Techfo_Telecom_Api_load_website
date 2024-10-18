@@ -15,7 +15,7 @@
     <!-- header section start here  -->
     <header>
        <div class="text-center py-10">
-        <h1 class="text-5xl font-extrabold text-white">Iphone Series</h1>
+        <h1 class="text-5xl font-extrabold text-white">Find your desire Phone</h1>
        </div>
     </header>
     <!-- header section start here  -->
@@ -23,12 +23,21 @@
     <!-- main section start here  -->
      <main class="py-5">
         <section class="container mx-auto overflow-hidden">
+            
             <div class="search-box bg-black text-center p-4 rounded-2xl mb-10">
                 <input type="text" id="search-box" placeholder="Search here your desire company" class="input input-bordered w-full max-w-xs" />
                 <button onclick="findInputText()" class="btn btn-warning">Search</button>
             </div>
+
+            <div id="loading-spinner" class="text-center hidden">
+                <span class="loading loading-ring loading-lg text-white"></span>
+            </div>
+
             <div id="card-section-main" class="grid grid-cols-3 gap-10">
                 
+            </div>
+            <div id="show-all-btn" class="text-center mt-10 hidden">
+                <button onclick="" class="btn btn-warning">Show All</button>
             </div>
         </section>
      </main>
@@ -41,7 +50,7 @@
     <!-- footer section end here  -->
 
     <!-- Javascript file link here  -->
-    <script src="./js/search.js"></script>
+    <script src="./js/search_spinner.js"></script>
     <script src="./js/hunting_phone.js"></script>
 </body>
 </html>
